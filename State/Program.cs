@@ -10,6 +10,9 @@ namespace State
     {
         static void Main(string[] args)
         {
+            Context context = new Context(new ConcreteStateA());
+            context.Request1();
+            context.Request2();
             Console.ReadLine();
         }
     }
