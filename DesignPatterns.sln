@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Memento", "Memento\Memento.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Iterator", "Iterator\Iterator.csproj", "{46A7E66F-7999-4249-8721-403E26ECFF4D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Strategy", "Strategy\Strategy.csproj", "{DE4AEA4F-0292-4B3F-990C-28F29E6B6331}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{46A7E66F-7999-4249-8721-403E26ECFF4D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{46A7E66F-7999-4249-8721-403E26ECFF4D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{46A7E66F-7999-4249-8721-403E26ECFF4D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DE4AEA4F-0292-4B3F-990C-28F29E6B6331}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DE4AEA4F-0292-4B3F-990C-28F29E6B6331}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DE4AEA4F-0292-4B3F-990C-28F29E6B6331}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DE4AEA4F-0292-4B3F-990C-28F29E6B6331}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
