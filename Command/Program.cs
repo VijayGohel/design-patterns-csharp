@@ -18,6 +18,15 @@ namespace Command
             command = new DeleteCustomerCommand(customerService);
             button.SetCommand(command);
             button.Click();
+
+            ICommand resizeCommand = new ResizeCommand();
+            ICommand blackAndWhiteCommand = new BlackAndWhiteCommand();
+            CompositeCommand compositeCommand = new CompositeCommand();
+
+            compositeCommand.Add(resizeCommand);
+            compositeCommand.Add(blackAndWhiteCommand);
+            compositeCommand.Execute();
+
             Console.ReadLine();
         }
     }
