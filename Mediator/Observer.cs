@@ -6,10 +6,8 @@ using System.Threading.Tasks;
 
 namespace Mediator
 {
-    public class Button : UIControl
+    public interface Observer
     {
-        private bool _isEnable = true;
-
-        public bool IsEnable { get => _isEnable; set { _isEnable = value; } }
+        void Update();
     }
 }

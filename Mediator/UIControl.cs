@@ -8,11 +8,19 @@ namespace Mediator
 {
     public class UIControl
     {
-        protected DialogBox owner;
+        private List<Observer> observers = new();
 
-        public UIControl(DialogBox owner)
+        public void AddObserver(Observer observer)
         {
-            this.owner = owner;
+            observers.Add(observer);
+        }
+
+        public void NotifyAllObservers()
+        {
+            foreach (Observer observer in observers)
+            {
+                observer.Update();
+            }
         }
     }
 }

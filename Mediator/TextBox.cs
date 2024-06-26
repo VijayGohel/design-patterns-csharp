@@ -6,14 +6,10 @@ using System.Threading.Tasks;
 
 namespace Mediator
 {
-    internal class TextBox : UIControl
+    public class TextBox : UIControl
     {
         private string _content = string.Empty;
 
-        public TextBox(DialogBox owner) : base(owner)
-        {
-        }
-
-        public string Content { get => _content; set { _content = value; this.owner.Changed(this); } }
+        public string Content { get => _content; set { _content = value; } }
     }
 }

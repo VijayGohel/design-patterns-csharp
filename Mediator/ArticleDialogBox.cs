@@ -1,34 +1,51 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Mediator
 {
-    public class ArticleDialogBox : DialogBox
+    public class ArticleDialogBox
     {
+        public class ListBoxObserver : Observer
+        {
+            ArticleDialogBox articleDialog;
+            public ListBoxObserver(ArticleDialogBox articleDialog)
+            {
+                this.articleDialog = articleDialog;
+            }
+            public void Update()
+            {
+                this.articleDialog.ArticleSelected();
+            }
+        }
+
+        public class TextBoxObserver : Observer
+        {
+            ArticleDialogBox articleDialog;
+            public TextBoxObserver(ArticleDialogBox articleDialog)
+            {
+                this.articleDialog = articleDialog;
+            }
+            public void Update()
+            {
+                this.articleDialog.TitleChanged();
+            }
+        }
 
         private ListBox articleListBox;
         private TextBox titleTextBox;
         private Button saveButton;
         public ArticleDialogBox()
         {
-            this.articleListBox = new ListBox(this);
-            this.titleTextBox = new TextBox(this);
-            this.saveButton = new Button(this);
-        }
+            this.articleListBox = new ListBox();
+            this.titleTextBox = new TextBox();
+            this.saveButton = new Button();
 
-        public override void Changed(UIControl control)
-        {
-            if (control == articleListBox)
-            {
-                ArticleSelected();
-            }
-            else if (control == titleTextBox) 
-            {
-                TitleChanged();
-            }
+            this.articleListBox.AddObserver(new ListBoxObserver(this));
+            this.titleTextBox.AddObserver(new TextBoxObserver(this));
         }
 
         private void ArticleSelected()
